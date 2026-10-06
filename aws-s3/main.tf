@@ -4,11 +4,19 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
   }
 }
 
 provider "aws" {
   region = var.regions[0]
+
+}
+resource "random_id" "rand_id" {
+  byte_length = 8
 }
 
 resource "aws_s3_bucket" "mybucket" {
@@ -21,4 +29,7 @@ resource "aws_s3_bucket_object" "myobject" {
   source = "myfile.txt"
 }
 
+output "random_id" {
+  value = random_id.rand_id.b64_url
+}
   
