@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "mybucket" {
 }
 
 resource "aws_s3_bucket_object" "myobject" {
-  bucket = aws_s3_bucket.mybucket.id
+  bucket = aws_s3_bucket.mybucket.id 
   key    = "myfile.txt"
   source = "myfile.txt"
 }
