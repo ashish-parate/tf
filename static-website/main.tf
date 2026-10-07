@@ -34,10 +34,12 @@ resource "aws_s3_bucket_public_access_block" "mywebapp-bucket-public-access-bloc
 
 resource "aws_s3_bucket_policy" "mywebapp-bucket-policy" {
   bucket = aws_s3_bucket.mywebapp-bucket.id
+
     policy = jsonencode({
         Version = "2012-10-17"
         Statement = [
             {
+                sid = "PublicReadGetObject"
                 Effect = "Allow"
                 Principal = "*"
                 Action = "s3:GetObject"
