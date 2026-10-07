@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket = "my-unique-bucket-45f8aa0f5136a438"
     key    = "backends.tfstate"
-    region = "us-east-1"
+    region = "ap-south-1"
 }
 
 provider "aws" {
@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "myserver" {
-  ami           = "ami-01a00762f46d584a1"
+  ami           = "ami-08e3b3155fc937a94"
   instance_type = "t3.micro"
 
   tags = {
