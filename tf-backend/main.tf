@@ -9,6 +9,7 @@ terraform {
     bucket = "my-unique-bucket-45f8aa0f5136a438"
     key    = "backends.tfstate"
     region = "ap-south-1"
+  }
 }
 
 provider "aws" {
