@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.regions[0]
+  region = "ap-south-1"
 }
 
 resource "aws_instance" "myserver" {
