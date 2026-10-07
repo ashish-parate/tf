@@ -23,6 +23,15 @@ resource "aws_s3_bucket" "mywebapp-bucket" {
   bucket = "mywebapp-bucket-${random_id.rand_id.hex}"
 }
 
+resource "aws_s3_bucket_public_access_block" "mywebapp-bucket-public-access-block" {
+  bucket = aws_s3_bucket.mywebapp-bucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false   
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
 resource "aws_s3_object" "index_html" {
   bucket = aws_s3_bucket.mywebapp-bucket.id
   key    = "index.html"
