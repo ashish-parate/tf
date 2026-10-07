@@ -20,7 +20,7 @@ resource "random_id" "rand_id" {
 }
 
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "my-unique-bucket-name-955"
+  bucket = "my-unique-bucket-${random_id.rand_id.hex}"
 }
 
 resource "aws_s3_bucket_object" "myobject" {
@@ -30,6 +30,6 @@ resource "aws_s3_bucket_object" "myobject" {
 }
 
 output "random_id" {
-  value = random_id.rand_id.b64_hex
+  value = random_id.rand_id.b64_
 }
   
