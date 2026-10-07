@@ -73,7 +73,7 @@ resource "aws_s3_object" "styles_css" {
   source = "styles.css"
 }
 
-output "random_id" {
-  value = random_id.rand_id.hex
+output "website_endpoint" {
+  value = aws_s3_bucket_website_configuration.mywebapp-bucket-website-configuration.website_endpoint
 }
   
