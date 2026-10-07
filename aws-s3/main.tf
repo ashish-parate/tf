@@ -30,6 +30,6 @@ resource "aws_s3_bucket_object" "myobject" {
 }
 
 output "random_id" {
-  value = random_id.rand_id.b64_
+  value = random_id.rand_id.b64_hex
 }
   
