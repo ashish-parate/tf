@@ -41,6 +41,7 @@ resource "aws_s3_bucket_policy" "mywebapp-bucket-policy" {
 
     Statement = [
       {
+        sid       = "PublicReadGetObject"
         Effect    = "Allow"
         Principal = "*"
         Action    = "s3:GetObject"
