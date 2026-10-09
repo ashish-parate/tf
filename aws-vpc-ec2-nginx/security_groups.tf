@@ -2,7 +2,7 @@
 resource "aws_security_group" "nginx_sg" {
     vpc_id = aws_vpc.my_vpc.id
     
- #inbound rule for HTTP traffic
+ #inbound rule for HTTP traffic and allow access from any IP address
     ingress {
         from_port   = 80
         to_port     = 80

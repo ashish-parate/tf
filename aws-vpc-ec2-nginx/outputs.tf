@@ -8,3 +8,9 @@ output "nginxserver_url" {
     description = "URL to access the nginx server"
     value       = "http://${aws_instance.nginxserver.public_ip}"
 }
+
+# output nginx server running status
+output "nginxserver_status" {
+    description = "Status of the nginx server"
+    value       = aws_instance.nginxserver.instance_state
+}
