@@ -62,7 +62,7 @@ resource "aws_route_table_association" "public_subnet_association" {
     
 #ec2 instance in the public subnet
 resource "aws_instance" "myserver" {
-  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI (HVM), SSD Volume Type
+  ami           = "ami-08e3b3155fc937a94" # Amazon Linux 2 AMI (HVM), SSD Volume Type
   instance_type = "t3.micro"
   subnet_id     = aws_subnet.public_subnet.id
   tags = {
