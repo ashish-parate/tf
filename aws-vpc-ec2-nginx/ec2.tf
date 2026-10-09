@@ -19,3 +19,4 @@ resource "aws_instance" "nginxserver" {
     tags = {
         Name = "nginxserver"
     }
+}
