@@ -2,8 +2,8 @@ variable "instance_type" {
   description = "what type of instance you want to create"
   type        = string
   validation {
-    condition = var.instance_type in ["t2.micro", "t2.small", "t2.medium", "t3.micro", "t3.small", "t3.medium"]
-    error_message = "Invalid instance type. Allowed values are: t2.micro, t2.small, t2.medium, t3.micro, t3.small, t3.medium."
+    condition     = contains(["t2.micro", "t2.small", "t2.medium"], var.instance_type)
+    error_message = "Invalid instance type. Allowed values are: t2.micro, t2.small, t2.medium."
   }
   
 }
